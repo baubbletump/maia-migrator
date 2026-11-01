@@ -10,7 +10,7 @@ RUN go mod download
 
 COPY . .
 
-RUN make build
+RUN go build -o migrator ./cmd/migrator/main.go
 
 
 FROM alpine:3.24

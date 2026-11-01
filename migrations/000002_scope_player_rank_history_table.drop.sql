@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS scope.player_rank_history;
