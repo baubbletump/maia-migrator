@@ -35,6 +35,10 @@ func Migrate(connStr string) error {
 		return err
 	}
 
+	if _, err := db.Exec(`DELETE FROM public.schema_migrations WHERE dirty = true`); err != nil {
+		return err
+	}
+
 	if err := m.Up(); err != nil {
 		if !errors.Is(err, migrate.ErrNoChange) {
 			return fmt.Errorf("migration failed: %v\n", err)
