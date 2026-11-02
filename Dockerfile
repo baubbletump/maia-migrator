@@ -18,5 +18,6 @@ FROM alpine:3.24
 WORKDIR /app
 
 COPY --from=builder /app/migrator .
+COPY --from=builder /app/migrations ./migrations
 
 CMD ["./migrator"]

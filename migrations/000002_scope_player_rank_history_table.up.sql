@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS scope.player_rank_history (
     id UUID PRIMARY KEY DEFAULT uuidv7(),
     account_id INTEGER NOT NULL,
-    rank INTEGER NOT NULL,
+    mmr INTEGER NOT NULL,
     recorded_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
